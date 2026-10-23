@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080C16" />
+      <stop offset="45%" stop-color="#0E1626" />
+      <stop offset="85%" stop-color="#090E1A" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="red-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D71921" />
+      <stop offset="50%" stop-color="#FF333D" />
+      <stop offset="100%" stop-color="#B31017" />
+    </linearGradient>
+
+    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCEFD2" />
+      <stop offset="35%" stop-color="#E8C373" />
+      <stop offset="70%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#916E28" />
+    </linearGradient>
+
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" />
+      <stop offset="100%" stop-color="#0077FE" />
+    </linearGradient>
+
+    <linearGradient id="line-pulse" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D71921" stop-opacity="0" />
+      <stop offset="50%" stop-color="#FF333D" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#C5A059" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-red" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <!-- Keyframe Animations -->
+    <style>
+      @keyframes radar-sweep {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes pulse-ring {
+        0% { r: 50px; opacity: 0.8; }
+        50% { r: 130px; opacity: 0.2; }
+        100% { r: 190px; opacity: 0; }
+      }
+      @keyframes beam-travel {
+        0% { stroke-dashoffset: 1000; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes float-badge {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-4px); }
+      }
+      @keyframes gold-shimmer {
+        0%, 100% { opacity: 0.85; filter: drop-shadow(0 0 4px #C5A059); }
+        50% { opacity: 1; filter: drop-shadow(0 0 12px #FCEFD2); }
+      }
+      @keyframes text-glow {
+        0%, 100% { text-shadow: 0 0 8px rgba(215, 25, 33, 0.4); }
+        50% { text-shadow: 0 0 18px rgba(215, 25, 33, 0.8), 0 0 28px rgba(197, 160, 89, 0.4); }
+      }
+      .radar-arm {
+        transform-origin: 860px 180px;
+        animation: radar-sweep 8s linear infinite;
+      }
+      .pulse-circle {
+        animation: pulse-ring 4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+      }
+      .pulse-circle-delay {
+        animation: pulse-ring 4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite 2s;
+      }
+      .animated-beam {
+        stroke-dasharray: 60, 140;
+        animation: beam-travel 6s linear infinite;
+      }
+      .badge-float {
+        animation: float-badge 3.5s ease-in-out infinite;
+      }
+      .shimmer-gold {
+        animation: gold-shimmer 3s ease-in-out infinite;
+      }
+      .title-text {
+        animation: text-glow 4s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1000" height="380" fill="url(#bg-grad)" rx="16" />
+
+  <!-- Subtle High-Tech Hexagonal Grid Overlay -->
+  <g stroke="#1F2A3F" stroke-width="0.8" opacity="0.35">
+    <path d="M 0,40 L 1000,40 M 0,80 L 1000,80 M 0,120 L 1000,120 M 0,160 L 1000,160 M 0,200 L 1000,200 M 0,240 L 1000,240 M 0,280 L 1000,280 M 0,320 L 1000,320 M 0,360 L 1000,360" />
+    <path d="M 100,0 L 100,380 M 200,0 L 200,380 M 300,0 L 300,380 M 400,0 L 400,380 M 500,0 L 500,380 M 600,0 L 600,380 M 700,0 L 700,380 M 800,0 L 800,380 M 900,0 L 900,380" />
+  </g>
+
+  <!-- Outer Elegant Border Frame -->
+  <rect x="8" y="8" width="984" height="364" fill="none" stroke="url(#gold-grad)" stroke-width="1.2" rx="14" opacity="0.8" />
+  <rect x="14" y="14" width="972" height="352" fill="none" stroke="#D71921" stroke-width="0.8" rx="10" opacity="0.4" />
+
+  <!-- Corner Tech Brackets -->
+  <path d="M 16,36 L 16,16 L 36,16" fill="none" stroke="url(#gold-grad)" stroke-width="2.5" />
+  <path d="M 984,36 L 984,16 L 964,16" fill="none" stroke="url(#gold-grad)" stroke-width="2.5" />
+  <path d="M 16,344 L 16,364 L 36,364" fill="none" stroke="url(#gold-grad)" stroke-width="2.5" />
+  <path d="M 984,344 L 984,364 L 964,364" fill="none" stroke="url(#gold-grad)" stroke-width="2.5" />
+
+  <!-- Animated Horizon Pulse Line -->
+  <line x1="20" y1="285" x2="980" y2="285" stroke="url(#line-pulse)" stroke-width="2" />
+  <path d="M 30,285 L 650,285" fill="none" stroke="url(#gold-grad)" stroke-width="2" class="animated-beam" opacity="0.9" />
+
+  <!-- RADAR / AUDIT SCANNER (Right Side Graphic) -->
+  <g transform="translate(0, 0)">
+    <!-- Concentric Target Circles -->
+    <circle cx="860" cy="180" r="160" fill="none" stroke="#1E2A42" stroke-width="1" />
+    <circle cx="860" cy="180" r="120" fill="none" stroke="#223352" stroke-width="1.2" stroke-dasharray="4, 6" />
+    <circle cx="860" cy="180" r="80" fill="none" stroke="#2A4068" stroke-width="1.2" />
+    <circle cx="860" cy="180" r="40" fill="none" stroke="url(#gold-grad)" stroke-width="1.4" opacity="0.6" />
+
+    <!-- Pulse Wave Animations -->
+    <circle cx="860" cy="180" r="50" fill="none" stroke="#D71921" stroke-width="1.5" class="pulse-circle" />
+    <circle cx="860" cy="180" r="50" fill="none" stroke="#C5A059" stroke-width="1.2" class="pulse-circle-delay" />
+
+    <!-- Crosshair Axes -->
+    <line x1="680" y1="180" x2="1000" y2="180" stroke="#1E2D48" stroke-width="1" stroke-dasharray="2, 4" />
+    <line x1="860" y1="20" x2="860" y2="340" stroke="#1E2D48" stroke-width="1" stroke-dasharray="2, 4" />
+
+    <!-- Radar Rotating Beam -->
+    <g class="radar-arm">
+      <path d="M 860,180 L 1010,130 A 160 160 0 0 1 1020,180 Z" fill="url(#red-glow)" opacity="0.22" />
+      <line x1="860" y1="180" x2="1020" y2="180" stroke="#FF333D" stroke-width="2.2" filter="url(#glow-red)" />
+    </g>
+
+    <!-- Radar Target Nodes (Planted Violations Found) -->
+    <circle cx="915" cy="130" r="4.5" fill="#00F0FF" filter="url(#glow-gold)" />
+    <text x="925" y="133" fill="#A0C8FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600">POL-DOA-001</text>
+
+    <circle cx="810" cy="235" r="4.5" fill="#FF333D" filter="url(#glow-red)" />
+    <text x="735" y="248" fill="#FF888E" font-family="'Inter', sans-serif" font-size="9" font-weight="600">POL-SOD-001 [CRITICAL]</text>
+
+    <circle cx="940" cy="220" r="3.5" fill="#FFD159" />
+    <text x="948" y="223" fill="#FFD159" font-family="'Inter', sans-serif" font-size="9" font-weight="600">GCAA Medical</text>
+
+    <!-- Center Radar Core Pin -->
+    <circle cx="860" cy="180" r="7" fill="url(#red-glow)" stroke="#FFFFFF" stroke-width="2" />
+  </g>
+
+  <!-- LEFT & CENTER CONTENT -->
+
+  <!-- Top Badge: Challenge Authority -->
+  <g transform="translate(50, 42)">
+    <!-- Red Badge -->
+    <rect x="0" y="0" width="105" height="28" rx="5" fill="url(#red-glow)" filter="url(#card-shadow)" />
+    <text x="12" y="19" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="13" letter-spacing="1.2">EMIRATES</text>
+    
+    <!-- Gold Sub-Badge -->
+    <rect x="110" y="0" width="85" height="28" rx="5" fill="#131C2D" stroke="url(#gold-grad)" stroke-width="1.2" />
+    <text x="126" y="18" fill="url(#gold-grad)" font-family="'Inter', sans-serif" font-weight="800" font-size="12" letter-spacing="1">GROUP</text>
+
+    <!-- Challenge Label -->
+    <rect x="204" y="0" width="280" height="28" rx="5" fill="#0E1726" stroke="#2B3A52" stroke-width="1" />
+    <circle cx="218" cy="14" r="4" fill="#10B981" />
+    <text x="230" y="18" fill="#D1D5DB" font-family="'Inter', sans-serif" font-weight="600" font-size="11">Continuous HR Compliance Challenge</text>
+  </g>
+
+  <!-- Main Hero Title -->
+  <text x="50" y="118" fill="#FFFFFF" font-family="'Inter', 'Cairo', sans-serif" font-weight="900" font-size="34" letter-spacing="-0.5" class="title-text">
+    Continuous HR Compliance Intelligence
+  </text>
+  <text x="50" y="152" fill="url(#gold-grad)" font-family="'Cairo', 'Inter', sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">
+    نظام التدقيق والامتثال المستمر للموارد البشرية • مجموعة طيران الإمارات
+  </text>
+
+  <!-- Value Proposition Deck -->
+  <text x="50" y="188" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="400" font-size="14.5">
+    Automating 100% compliance verification across every HR transaction: explainable exceptions in plain English &amp; Arabic,
+  </text>
+  <text x="50" y="210" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="400" font-size="14.5">
+    intelligent risk-weighted routing, unsupervised ML anomaly discovery, and human-in-the-loop procedural fairness.
+  </text>
+
+  <!-- KEY STAT / PILL STRIP (Horizontal row at Y=236) -->
+  <g transform="translate(50, 230)">
+    
+    <!-- Pill 1: 100% Coverage -->
+    <g class="badge-float">
+      <rect x="0" y="0" width="145" height="36" rx="6" fill="#0E1A2F" stroke="#10B981" stroke-width="1.2" />
+      <circle cx="16" cy="18" r="4.5" fill="#10B981" />
+      <text x="28" y="16" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="11">100% COVERAGE</text>
+      <text x="28" y="28" fill="#10B981" font-family="'Inter', sans-serif" font-weight="500" font-size="9">Zero Manual Sampling</text>
+    </g>
+
+    <!-- Pill 2: 18 Policy Rules -->
+    <g transform="translate(156, 0)">
+      <rect x="0" y="0" width="148" height="36" rx="6" fill="#0E1A2F" stroke="#D71921" stroke-width="1.2" />
+      <circle cx="16" cy="18" r="4.5" fill="#D71921" />
+      <text x="28" y="16" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="11">18 RULES CODIFIED</text>
+      <text x="28" y="28" fill="#FF888E" font-family="'Inter', sans-serif" font-weight="500" font-size="9">DOA, SoD, GCAA, Timing</text>
+    </g>
+
+    <!-- Pill 3: Bilingual AI -->
+    <g transform="translate(315, 0)">
+      <rect x="0" y="0" width="158" height="36" rx="6" fill="#0E1A2F" stroke="#C5A059" stroke-width="1.2" />
+      <circle cx="16" cy="18" r="4.5" fill="#C5A059" />
+      <text x="28" y="16" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="11">BILINGUAL EN / AR</text>
+      <text x="28" y="28" fill="#C5A059" font-family="'Inter', sans-serif" font-weight="500" font-size="9">تفسير فوري باللغة البسيطة</text>
+    </g>
+
+    <!-- Pill 4: Human-in-the-Loop -->
+    <g transform="translate(484, 0)">
+      <rect x="0" y="0" width="168" height="36" rx="6" fill="#0E1A2F" stroke="#6366F1" stroke-width="1.2" />
+      <circle cx="16" cy="18" r="4.5" fill="#6366F1" />
+      <text x="28" y="16" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="11">HUMAN-IN-THE-LOOP</text>
+      <text x="28" y="28" fill="#A5B4FC" font-family="'Inter', sans-serif" font-weight="500" font-size="9">Zero Auto-Mutation Guard</text>
+    </g>
+
+  </g>
+
+  <!-- BOTTOM METRICS & TRUST STRIP -->
+  <g transform="translate(50, 310)">
+    <!-- Metric 1 -->
+    <text x="0" y="20" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="18">10,000</text>
+    <text x="0" y="36" fill="#64748B" font-family="'Inter', sans-serif" font-weight="500" font-size="11">Txns Audited (12 Mo)</text>
+
+    <line x1="130" y1="10" x2="130" y2="40" stroke="#1E2A40" stroke-width="1.2" />
+
+    <!-- Metric 2 -->
+    <text x="150" y="20" fill="#E8C373" font-family="'Inter', sans-serif" font-weight="800" font-size="18">AED 14.8M</text>
+    <text x="150" y="36" fill="#64748B" font-family="'Inter', sans-serif" font-weight="500" font-size="11">Financial Exposure Guarded</text>
+
+    <line x1="310" y1="10" x2="310" y2="40" stroke="#1E2A40" stroke-width="1.2" />
+
+    <!-- Metric 3 -->
+    <text x="330" y="20" fill="#00F0FF" font-family="'Inter', sans-serif" font-weight="800" font-size="18">&lt; 2.5s</text>
+    <text x="330" y="36" fill="#64748B" font-family="'Inter', sans-serif" font-weight="500" font-size="11">Batch Processing Latency</text>
+
+    <line x1="470" y1="10" x2="470" y2="40" stroke="#1E2A40" stroke-width="1.2" />
+
+    <!-- Metric 4 -->
+    <text x="490" y="20" fill="#10B981" font-family="'Inter', sans-serif" font-weight="800" font-size="18">UAE PDPL &amp; GDPR</text>
+    <text x="490" y="36" fill="#64748B" font-family="'Inter', sans-serif" font-weight="500" font-size="11">Decree-Law No. 45 Compliant</text>
+  </g>
+
+</svg>

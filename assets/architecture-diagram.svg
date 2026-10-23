@@ -1,0 +1,364 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 480" width="100%" height="100%">
+  <defs>
+    <!-- Background & Shading Gradients -->
+    <linearGradient id="bg-canvas" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B14" />
+      <stop offset="50%" stop-color="#0D1424" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141E33" />
+      <stop offset="100%" stop-color="#0C1322" />
+    </linearGradient>
+
+    <linearGradient id="primary-red" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D71921" />
+      <stop offset="100%" stop-color="#FF333D" />
+    </linearGradient>
+
+    <linearGradient id="accent-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E8C373" />
+      <stop offset="100%" stop-color="#C5A059" />
+    </linearGradient>
+
+    <linearGradient id="flow-pulse-1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#00F0FF" stop-opacity="1" />
+      <stop offset="100%" stop-color="#0077FE" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="soft-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="box-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000000" flood-opacity="0.7" />
+    </filter>
+
+    <!-- Animations -->
+    <style>
+      @keyframes dash-flow {
+        from { stroke-dashoffset: 240; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes pulse-node {
+        0%, 100% { transform: scale(1); opacity: 0.9; }
+        50% { transform: scale(1.02); opacity: 1; filter: drop-shadow(0 0 8px rgba(215, 25, 33, 0.6)); }
+      }
+      @keyframes scan-line {
+        0% { transform: translateY(0px); opacity: 0.2; }
+        50% { opacity: 0.8; }
+        100% { transform: translateY(180px); opacity: 0.2; }
+      }
+      .flow-path {
+        stroke-dasharray: 8, 8;
+        animation: dash-flow 4s linear infinite;
+      }
+      .flow-path-fast {
+        stroke-dasharray: 6, 6;
+        animation: dash-flow 2s linear infinite;
+      }
+      .node-pulse {
+        animation: pulse-node 4s ease-in-out infinite;
+      }
+      .scanner-beam {
+        animation: scan-line 3s linear infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="980" height="480" fill="url(#bg-canvas)" rx="14" />
+  
+  <!-- Subtle Grid Lines -->
+  <g stroke="#162238" stroke-width="0.8" opacity="0.4">
+    <path d="M 0,60 L 980,60 M 0,120 L 980,120 M 0,180 L 980,180 M 0,240 L 980,240 M 0,300 L 980,300 M 0,360 L 980,360 M 0,420 L 980,420" />
+    <path d="M 120,0 L 120,480 M 240,0 L 240,480 M 360,0 L 360,480 M 480,0 L 480,480 M 600,0 L 600,480 M 720,0 L 720,480 M 840,0 L 840,480" />
+  </g>
+
+  <!-- Outer Frame -->
+  <rect x="8" y="8" width="964" height="464" fill="none" stroke="#253550" stroke-width="1.2" rx="12" />
+
+  <!-- Diagram Title Header -->
+  <g transform="translate(30, 26)">
+    <rect x="0" y="0" width="36" height="24" rx="4" fill="url(#primary-red)" />
+    <text x="18" y="16" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="12" text-anchor="middle">01</text>
+    <text x="46" y="17" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="16">
+      End-to-End Continuous Audit Architecture &amp; Data Pipeline
+    </text>
+    <text x="590" y="16" fill="url(#accent-gold)" font-family="'Inter', sans-serif" font-weight="600" font-size="11">
+      100% Real-Time Transaction Verification • Sub-3-Second Ingestion
+    </text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- COLUMN 1: INGESTION LAYER (X=30 to 220) -->
+  <!-- ============================================================== -->
+  <g transform="translate(30, 68)">
+    <rect x="0" y="0" width="190" height="380" rx="8" fill="url(#card-grad)" stroke="#1F2E47" stroke-width="1" filter="url(#box-shadow)" />
+    
+    <!-- Column Header -->
+    <rect x="0" y="0" width="190" height="34" rx="8" fill="#131F35" stroke="#1F2E47" stroke-width="1" />
+    <text x="15" y="22" fill="#93C5FD" font-family="'Inter', sans-serif" font-weight="700" font-size="11" letter-spacing="0.5">
+      1. INGESTION &amp; CONNECTIVITY
+    </text>
+
+    <!-- Source Node 1: Oracle HCM -->
+    <g transform="translate(15, 48)">
+      <rect x="0" y="0" width="160" height="62" rx="6" fill="#0A0F1D" stroke="#2B3D5E" stroke-width="1" />
+      <rect x="10" y="10" width="6" height="6" rx="1" fill="#D71921" />
+      <text x="24" y="17" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="11">Oracle Cloud HCM</text>
+      <text x="24" y="32" fill="#64748B" font-family="'Inter', sans-serif" font-size="9.5">Hires, Transfers, Exits</text>
+      <text x="24" y="47" fill="#10B981" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Delta SFTP • TLS 1.3</text>
+    </g>
+
+    <!-- Source Node 2: dnata Ops ERP -->
+    <g transform="translate(15, 122)">
+      <rect x="0" y="0" width="160" height="62" rx="6" fill="#0A0F1D" stroke="#2B3D5E" stroke-width="1" />
+      <rect x="10" y="10" width="6" height="6" rx="1" fill="#C5A059" />
+      <text x="24" y="17" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="11">dnata Ground Ops</text>
+      <text x="24" y="32" fill="#64748B" font-family="'Inter', sans-serif" font-size="9.5">Ramp Handling &amp; Cargo</text>
+      <text x="24" y="47" fill="#C5A059" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Airside Pass Registry</text>
+    </g>
+
+    <!-- Source Node 3: Flight Roster & GCAA -->
+    <g transform="translate(15, 196)">
+      <rect x="0" y="0" width="160" height="62" rx="6" fill="#0A0F1D" stroke="#2B3D5E" stroke-width="1" />
+      <rect x="10" y="10" width="6" height="6" rx="1" fill="#00F0FF" />
+      <text x="24" y="17" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="11">Flight Deck &amp; Cabin</text>
+      <text x="24" y="32" fill="#64748B" font-family="'Inter', sans-serif" font-size="9.5">Captains, First Officers</text>
+      <text x="24" y="47" fill="#00F0FF" font-family="'Inter', sans-serif" font-size="9" font-weight="600">GCAA Class 1 Clearance</text>
+    </g>
+
+    <!-- Source Node 4: Employee Master Store -->
+    <g transform="translate(15, 270)">
+      <rect x="0" y="0" width="160" height="62" rx="6" fill="#0A0F1D" stroke="#2B3D5E" stroke-width="1" />
+      <rect x="10" y="10" width="6" height="6" rx="1" fill="#A855F7" />
+      <text x="24" y="17" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="11">Employee Master Hub</text>
+      <text x="24" y="32" fill="#64748B" font-family="'Inter', sans-serif" font-size="9.5">2,000 Verified Profiles</text>
+      <text x="24" y="47" fill="#A855F7" font-family="'Inter', sans-serif" font-size="9" font-weight="600">Grades 1-14 • Relatives</text>
+    </g>
+
+    <!-- Ingestion Banner -->
+    <rect x="15" y="344" width="160" height="24" rx="4" fill="#061224" stroke="#1D4ED8" stroke-width="1" />
+    <text x="80" y="360" fill="#60A5FA" font-family="'Inter', sans-serif" font-size="9.5" font-weight="700" text-anchor="middle">
+      10,000 TXNS / BATCH
+    </text>
+  </g>
+
+  <!-- CONNECTING FLOW: Col 1 -> Col 2 -->
+  <path d="M 220,150 L 268,150" fill="none" stroke="#38BDF8" stroke-width="2" class="flow-path-fast" />
+  <path d="M 220,290 L 268,290" fill="none" stroke="#C5A059" stroke-width="2" class="flow-path-fast" />
+
+  <!-- ============================================================== -->
+  <!-- COLUMN 2: DUAL-CORE COMPLIANCE ENGINE (X=270 to 480) -->
+  <!-- ============================================================== -->
+  <g transform="translate(270, 68)">
+    <rect x="0" y="0" width="210" height="380" rx="8" fill="url(#card-grad)" stroke="#D71921" stroke-width="1.2" filter="url(#box-shadow)" />
+    
+    <!-- Column Header -->
+    <rect x="0" y="0" width="210" height="34" rx="8" fill="#1C1423" stroke="#D71921" stroke-width="1" />
+    <text x="15" y="22" fill="#FF888E" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="0.5">
+      2. DUAL-ENGINE VERIFICATION
+    </text>
+
+    <!-- Track A: Deterministic Policy Rule Engine -->
+    <g transform="translate(12, 46)" class="node-pulse">
+      <rect x="0" y="0" width="186" height="152" rx="6" fill="#120A16" stroke="#D71921" stroke-width="1.2" />
+      <rect x="8" y="8" width="170" height="22" rx="4" fill="#240D14" />
+      <text x="93" y="23" fill="#FF4D55" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" text-anchor="middle">
+        18 CODIFIED EMIRATES RULES
+      </text>
+
+      <g transform="translate(12, 38)" font-family="'Inter', sans-serif" font-size="9" fill="#E2E8F0">
+        <text x="0" y="12" fill="#FCA5A5" font-weight="700">• POL-DOA-001:</text>
+        <text x="75" y="12" fill="#CBD5E1">Financial Grade DOA</text>
+
+        <text x="0" y="28" fill="#FCA5A5" font-weight="700">• POL-SOD-001/2:</text>
+        <text x="88" y="28" fill="#CBD5E1">Self &amp; Subordinate SoD</text>
+
+        <text x="0" y="44" fill="#FCA5A5" font-weight="700">• POL-DOC-001-4:</text>
+        <text x="88" y="44" fill="#CBD5E1">DHA &amp; GCAA Passports</text>
+
+        <text x="0" y="60" fill="#FCA5A5" font-weight="700">• POL-TIM-001-3:</text>
+        <text x="85" y="60" fill="#CBD5E1">Retro 30d &amp; Notice Caps</text>
+
+        <text x="0" y="76" fill="#FCA5A5" font-weight="700">• POL-ALLOW/SAL:</text>
+        <text x="92" y="76" fill="#CBD5E1">Housing &amp; 15% Hike Cap</text>
+
+        <text x="0" y="92" fill="#FCA5A5" font-weight="700">• POL-DUP-001:</text>
+        <text x="78" y="92" fill="#CBD5E1">Rolling 30d Duplicates</text>
+      </g>
+
+      <rect x="12" y="132" width="162" height="14" rx="3" fill="#2A0B13" />
+      <text x="93" y="143" fill="#10B981" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800" text-anchor="middle">
+        100% DETERMINISTIC ACCURACY
+      </text>
+    </g>
+
+    <!-- Track B: Unsupervised Machine Learning Detector -->
+    <g transform="translate(12, 212)">
+      <rect x="0" y="0" width="186" height="152" rx="6" fill="#0A141E" stroke="#00F0FF" stroke-width="1.2" />
+      <rect x="8" y="8" width="170" height="22" rx="4" fill="#0C202F" />
+      <text x="93" y="23" fill="#38BDF8" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" text-anchor="middle">
+        UNSUPERVISED ML ANOMALIES
+      </text>
+
+      <g transform="translate(12, 38)" font-family="'Inter', sans-serif" font-size="9" fill="#E2E8F0">
+        <text x="0" y="14" fill="#7DD3FC" font-weight="700">• Isolation Forest:</text>
+        <text x="82" y="14" fill="#CBD5E1">9-D Outlier Scorer</text>
+
+        <text x="0" y="32" fill="#7DD3FC" font-weight="700">• Approver Velocity:</text>
+        <text x="90" y="32" fill="#CBD5E1">7-Day Cluster Surges</text>
+
+        <text x="0" y="50" fill="#7DD3FC" font-weight="700">• Beneficiary Burst:</text>
+        <text x="92" y="50" fill="#CBD5E1">4+ Txns in 30 Days</text>
+
+        <text x="0" y="68" fill="#7DD3FC" font-weight="700">• Dept Z-Score &gt;3.0σ:</text>
+        <text x="96" y="68" fill="#CBD5E1">Budgetary Spikes</text>
+
+        <text x="0" y="86" fill="#7DD3FC" font-weight="700">• Off-Hour Filing:</text>
+        <text x="76" y="86" fill="#CBD5E1">Weekend Night Outliers</text>
+      </g>
+
+      <rect x="12" y="132" width="162" height="14" rx="3" fill="#091A26" />
+      <text x="93" y="143" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800" text-anchor="middle">
+        150 BEHAVIORAL ANOMALIES
+      </text>
+    </g>
+  </g>
+
+  <!-- CONNECTING FLOW: Col 2 -> Col 3 -->
+  <path d="M 480,150 L 528,150" fill="none" stroke="#FF4D55" stroke-width="2" class="flow-path-fast" />
+  <path d="M 480,290 L 528,290" fill="none" stroke="#38BDF8" stroke-width="2" class="flow-path-fast" />
+
+  <!-- ============================================================== -->
+  <!-- COLUMN 3: EXPLAINABLE AI & SYNTHESIS (X=530 to 730) -->
+  <!-- ============================================================== -->
+  <g transform="translate(530, 68)">
+    <rect x="0" y="0" width="200" height="380" rx="8" fill="url(#card-grad)" stroke="#C5A059" stroke-width="1.2" filter="url(#box-shadow)" />
+    
+    <!-- Column Header -->
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#241B10" stroke="#C5A059" stroke-width="1" />
+    <text x="15" y="22" fill="#E8C373" font-family="'Inter', sans-serif" font-weight="800" font-size="11" letter-spacing="0.5">
+      3. EXPLAINABILITY &amp; EVIDENCE
+    </text>
+
+    <!-- Plain English Card -->
+    <g transform="translate(12, 46)">
+      <rect x="0" y="0" width="176" height="96" rx="6" fill="#0A0F1A" stroke="#23354E" stroke-width="1" />
+      <text x="10" y="17" fill="#60A5FA" font-family="'Inter', sans-serif" font-weight="800" font-size="10">PLAIN LANGUAGE (EN)</text>
+      <text x="10" y="34" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="9" leading="12">
+        "Ad-hoc bonus of AED 18,500
+      </text>
+      <text x="10" y="48" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="9">
+        approved by Gr 08 Manager exceeds
+      </text>
+      <text x="10" y="62" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="9">
+        authority ceiling of AED 10,000."
+      </text>
+      <rect x="8" y="74" width="160" height="16" rx="3" fill="#1E293B" />
+      <text x="88" y="85" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="8" font-weight="700" text-anchor="middle">ZERO CRYPTIC ERROR CODES</text>
+    </g>
+
+    <!-- Arabic Plain Language Card -->
+    <g transform="translate(12, 150)">
+      <rect x="0" y="0" width="176" height="96" rx="6" fill="#0A0F1A" stroke="#C5A059" stroke-width="1" />
+      <text x="10" y="17" fill="#E8C373" font-family="'Cairo', sans-serif" font-weight="800" font-size="11">التفسير باللغة العربية (AR)</text>
+      <text x="166" y="35" fill="#E2E8F0" font-family="'Cairo', sans-serif" font-size="9" text-anchor="end">
+        "معاملة بقيمة 18,500 درهم اعتمدت
+      </text>
+      <text x="166" y="50" fill="#E2E8F0" font-family="'Cairo', sans-serif" font-size="9" text-anchor="end">
+        من مفوض بالدرجة 08 متجاوزة سقف
+      </text>
+      <text x="166" y="65" fill="#E2E8F0" font-family="'Cairo', sans-serif" font-size="9" text-anchor="end">
+        صلاحيته (10,000 درهم) بمقدار 8,500."
+      </text>
+      <rect x="8" y="74" width="160" height="16" rx="3" fill="#241B10" />
+      <text x="88" y="85" fill="#E8C373" font-family="'Cairo', sans-serif" font-size="9" font-weight="700" text-anchor="middle">دعم كامل للغة العربية والـ RTL</text>
+    </g>
+
+    <!-- Cited Evidence & Severity -->
+    <g transform="translate(12, 254)">
+      <rect x="0" y="0" width="176" height="114" rx="6" fill="#0D111D" stroke="#334155" stroke-width="1" />
+      <text x="10" y="16" fill="#F59E0B" font-family="'Inter', sans-serif" font-weight="800" font-size="10">CITED EVIDENCE MATRIX</text>
+      <text x="10" y="32" fill="#CBD5E1" font-family="'Courier New', monospace" font-size="8.5">amount: AED 18,500</text>
+      <text x="10" y="44" fill="#CBD5E1" font-family="'Courier New', monospace" font-size="8.5">approver_grade: 8</text>
+      <text x="10" y="56" fill="#CBD5E1" font-family="'Courier New', monospace" font-size="8.5">policy_cap: AED 10,000</text>
+      <text x="10" y="68" fill="#F87171" font-family="'Courier New', monospace" font-size="8.5">excess: +AED 8,500 (85%)</text>
+      <line x1="8" y1="76" x2="168" y2="76" stroke="#1E293B" stroke-width="1" />
+      <rect x="10" y="84" width="70" height="20" rx="3" fill="#450A0A" stroke="#EF4444" stroke-width="0.8" />
+      <text x="45" y="97" fill="#FCA5A5" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800" text-anchor="middle">CRITICAL</text>
+      
+      <rect x="88" y="84" width="78" height="20" rx="3" fill="#172554" stroke="#3B82F6" stroke-width="0.8" />
+      <text x="127" y="97" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="8" font-weight="700" text-anchor="middle">Comp &amp; Ben Lead</text>
+    </g>
+  </g>
+
+  <!-- CONNECTING FLOW: Col 3 -> Col 4 -->
+  <path d="M 730,220 L 778,220" fill="none" stroke="#C5A059" stroke-width="2" class="flow-path-fast" />
+
+  <!-- ============================================================== -->
+  <!-- COLUMN 4: HUMAN GOVERNANCE WORKBENCH (X=780 to 950) -->
+  <!-- ============================================================== -->
+  <g transform="translate(780, 68)">
+    <rect x="0" y="0" width="170" height="380" rx="8" fill="url(#card-grad)" stroke="#6366F1" stroke-width="1.2" filter="url(#box-shadow)" />
+    
+    <!-- Column Header -->
+    <rect x="0" y="0" width="170" height="34" rx="8" fill="#191B36" stroke="#6366F1" stroke-width="1" />
+    <text x="12" y="22" fill="#A5B4FC" font-family="'Inter', sans-serif" font-weight="800" font-size="10.5" letter-spacing="0.5">
+      4. HUMAN-IN-THE-LOOP
+    </text>
+
+    <!-- Persona 1: HR Analyst Queue -->
+    <g transform="translate(10, 46)">
+      <rect x="0" y="0" width="150" height="66" rx="5" fill="#0A0E1D" stroke="#2B3654" stroke-width="1" />
+      <circle cx="14" cy="16" r="4" fill="#3B82F6" />
+      <text x="24" y="20" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="10">HR Analyst Triage</text>
+      <text x="10" y="36" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">• Reviews evidence &amp; citations</text>
+      <text x="10" y="50" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">• Executes policy waivers</text>
+      <rect x="10" y="54" width="130" height="4" rx="2" fill="#3B82F6" opacity="0.4" />
+    </g>
+
+    <!-- Persona 2: Ops Lead Workload -->
+    <g transform="translate(10, 120)">
+      <rect x="0" y="0" width="150" height="66" rx="5" fill="#0A0E1D" stroke="#2B3654" stroke-width="1" />
+      <circle cx="14" cy="16" r="4" fill="#F59E0B" />
+      <text x="24" y="20" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="10">Ops Lead Queue</text>
+      <text x="10" y="36" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">• SLA priority dispatching</text>
+      <text x="10" y="50" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">• Workload balancing</text>
+      <rect x="10" y="54" width="130" height="4" rx="2" fill="#F59E0B" opacity="0.4" />
+    </g>
+
+    <!-- Persona 3: Internal Audit Lead -->
+    <g transform="translate(10, 194)">
+      <rect x="0" y="0" width="150" height="66" rx="5" fill="#0A0E1D" stroke="#2B3654" stroke-width="1" />
+      <circle cx="14" cy="16" r="4" fill="#10B981" />
+      <text x="24" y="20" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="10">Internal Audit Hub</text>
+      <text x="10" y="36" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">• 12-Month trend curves</text>
+      <text x="10" y="50" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">• 1-Click findings export</text>
+      <rect x="10" y="54" width="130" height="4" rx="2" fill="#10B981" opacity="0.4" />
+    </g>
+
+    <!-- Action Guardrail Card -->
+    <g transform="translate(10, 270)">
+      <rect x="0" y="0" width="150" height="98" rx="5" fill="#1A1428" stroke="#8B5CF6" stroke-width="1" />
+      <text x="75" y="16" fill="#C4B5FD" font-family="'Inter', sans-serif" font-weight="800" font-size="9" text-anchor="middle">HUMAN DECISION ACTIONS</text>
+      <g transform="translate(10, 24)" font-family="'Inter', sans-serif" font-size="8" font-weight="600">
+        <rect x="0" y="0" width="130" height="14" rx="2" fill="#065F46" />
+        <text x="65" y="10" fill="#A7F3D0" text-anchor="middle">✔ APPROVE WITH WAIVER</text>
+
+        <rect x="0" y="18" width="130" height="14" rx="2" fill="#78350F" />
+        <text x="65" y="28" fill="#FDE68A" text-anchor="middle">↩ RETURN TO SUBMITTER</text>
+
+        <rect x="0" y="36" width="130" height="14" rx="2" fill="#881337" />
+        <text x="65" y="46" fill="#FECDD3" text-anchor="middle">▲ ESCALATE TO AUDIT</text>
+      </g>
+      <text x="75" y="88" fill="#A78BFA" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" text-anchor="middle">ZERO AUTO-MUTATION</text>
+    </g>
+  </g>
+
+</svg>

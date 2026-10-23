@@ -1,0 +1,288 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 440" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-canvas-2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080D1A" />
+      <stop offset="50%" stop-color="#0E1628" />
+      <stop offset="100%" stop-color="#050810" />
+    </linearGradient>
+
+    <linearGradient id="card-inner" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141E33" />
+      <stop offset="100%" stop-color="#0B1220" />
+    </linearGradient>
+
+    <linearGradient id="gold-accent-2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FCEFD2" />
+      <stop offset="50%" stop-color="#E8C373" />
+      <stop offset="100%" stop-color="#C5A059" />
+    </linearGradient>
+
+    <!-- Animations -->
+    <style>
+      @keyframes dash-move {
+        0% { stroke-dashoffset: 200; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes scan-glow {
+        0%, 100% { opacity: 0.6; filter: drop-shadow(0 0 4px #00F0FF); }
+        50% { opacity: 1; filter: drop-shadow(0 0 12px #00F0FF); }
+      }
+      @keyframes badge-blink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+      }
+      .anim-dash {
+        stroke-dasharray: 6, 6;
+        animation: dash-move 3s linear infinite;
+      }
+      .glow-node {
+        animation: scan-glow 2.5s ease-in-out infinite;
+      }
+      .blink-pill {
+        animation: badge-blink 2s ease-in-out infinite;
+      }
+    </style>
+  </defs>
+
+  <!-- Canvas Base -->
+  <rect width="980" height="440" fill="url(#bg-canvas-2)" rx="14" />
+  
+  <!-- Subtle Grid -->
+  <g stroke="#16233B" stroke-width="0.7" opacity="0.45">
+    <path d="M 0,55 L 980,55 M 0,110 L 980,110 M 0,165 L 980,165 M 0,220 L 980,220 M 0,275 L 980,275 M 0,330 L 980,330 M 0,385 L 980,385" />
+    <path d="M 140,0 L 140,440 M 280,0 L 280,440 M 420,0 L 420,440 M 560,0 L 560,440 M 700,0 L 700,440 M 840,0 L 840,440" />
+  </g>
+
+  <!-- Border -->
+  <rect x="8" y="8" width="964" height="424" fill="none" stroke="#253550" stroke-width="1.2" rx="12" />
+
+  <!-- Diagram Title Header -->
+  <g transform="translate(30, 24)">
+    <rect x="0" y="0" width="36" height="24" rx="4" fill="#C5A059" />
+    <text x="18" y="16" fill="#000000" font-family="'Inter', sans-serif" font-weight="900" font-size="12" text-anchor="middle">02</text>
+    <text x="46" y="17" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="16">
+      Explainable AI &amp; Bilingual Natural Language Pipeline
+    </text>
+    <text x="590" y="16" fill="url(#gold-accent-2)" font-family="'Inter', sans-serif" font-weight="600" font-size="11">
+      Mathematical Evidence Binding • Conversational Reason • Zero Hallucination
+    </text>
+  </g>
+
+  <!-- ============================================================== -->
+  <!-- STEP 1: TRANSACTION TELEMETRY (X=30 to 220) -->
+  <!-- ============================================================== -->
+  <g transform="translate(30, 68)">
+    <rect x="0" y="0" width="190" height="340" rx="8" fill="url(#card-inner)" stroke="#1F2E47" stroke-width="1" />
+    
+    <rect x="0" y="0" width="190" height="34" rx="8" fill="#131F35" stroke="#1F2E47" stroke-width="1" />
+    <text x="14" y="22" fill="#93C5FD" font-family="'Inter', sans-serif" font-weight="700" font-size="11">
+      1. TRANSACTION DATA
+    </text>
+
+    <!-- Raw Data Box -->
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="162" height="190" rx="5" fill="#070B14" stroke="#23354E" stroke-width="1" />
+      <g transform="translate(10, 20)" font-family="'Courier New', monospace" font-size="9" fill="#94A3B8">
+        <text x="0" y="0" fill="#60A5FA" font-weight="bold"># INCOMING PAYLOAD</text>
+        <text x="0" y="16">txn_id: <tspan fill="#F8FAFC">"TXN-2026-00142"</tspan></text>
+        <text x="0" y="32">type: <tspan fill="#F8FAFC">"Salary Adjustment"</tspan></text>
+        <text x="0" y="48">emp_id: <tspan fill="#F8FAFC">"EK-00124"</tspan></text>
+        <text x="0" y="64">emp_grade: <tspan fill="#F8FAFC">7</tspan></text>
+        <text x="0" y="80">amount_aed: <tspan fill="#F59E0B" font-weight="bold">18500.00</tspan></text>
+        <text x="0" y="96">sub_date: <tspan fill="#F8FAFC">"2026-04-12"</tspan></text>
+        <text x="0" y="112">approver: <tspan fill="#F8FAFC">"EK-00088"</tspan></text>
+        <text x="0" y="128">app_grade: <tspan fill="#EF4444" font-weight="bold">8 (Manager)</tspan></text>
+        <text x="0" y="144">docs: <tspan fill="#F8FAFC">"Form_V2;Notes"</tspan></text>
+      </g>
+    </g>
+
+    <rect x="14" y="250" width="162" height="70" rx="5" fill="#111B2E" stroke="#1E293B" stroke-width="1" />
+    <text x="24" y="270" fill="#E2E8F0" font-family="'Inter', sans-serif" font-weight="700" font-size="10">Automated Audit Trigger</text>
+    <text x="24" y="286" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">Delta capture from Oracle HCM</text>
+    <text x="24" y="302" fill="#10B981" font-family="'Inter', sans-serif" font-size="8.5" font-weight="600">Payload Validated (100%)</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 220,200 L 268,200" fill="none" stroke="#38BDF8" stroke-width="2" class="anim-dash" />
+
+  <!-- ============================================================== -->
+  <!-- STEP 2: EVIDENCE BINDING ENGINE (X=270 to 470) -->
+  <!-- ============================================================== -->
+  <g transform="translate(270, 68)">
+    <rect x="0" y="0" width="200" height="340" rx="8" fill="url(#card-inner)" stroke="#D71921" stroke-width="1.2" />
+    
+    <rect x="0" y="0" width="200" height="34" rx="8" fill="#1F121C" stroke="#D71921" stroke-width="1" />
+    <text x="14" y="22" fill="#FF888E" font-family="'Inter', sans-serif" font-weight="700" font-size="11">
+      2. RULE CLAUSE &amp; EVIDENCE
+    </text>
+
+    <!-- Rule Matched Banner -->
+    <g transform="translate(14, 48)">
+      <rect x="0" y="0" width="172" height="42" rx="4" fill="#3B0C16" stroke="#D71921" stroke-width="1" />
+      <text x="10" y="16" fill="#FCA5A5" font-family="'Inter', sans-serif" font-weight="800" font-size="10">RULE CITATION:</text>
+      <text x="10" y="30" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="11">POL-DOA-001 (Section 4.2)</text>
+    </g>
+
+    <!-- Mathematical Discrepancy Matrix -->
+    <g transform="translate(14, 102)">
+      <rect x="0" y="0" width="172" height="154" rx="5" fill="#0A0E1A" stroke="#2B3D5E" stroke-width="1" />
+      <text x="10" y="18" fill="#E8C373" font-family="'Inter', sans-serif" font-weight="800" font-size="9.5">EVIDENCE COMPARISON</text>
+
+      <g transform="translate(10, 34)" font-family="'Inter', sans-serif" font-size="9">
+        <text x="0" y="0" fill="#94A3B8">Transaction Sum:</text>
+        <text x="152" y="0" fill="#F8FAFC" font-weight="bold" font-family="'Courier New', monospace" text-anchor="end">AED 18,500</text>
+
+        <text x="0" y="22" fill="#94A3B8">Approver Authority:</text>
+        <text x="152" y="22" fill="#F8FAFC" font-weight="bold" font-family="'Courier New', monospace" text-anchor="end">Grade 08 (Mgr)</text>
+
+        <text x="0" y="44" fill="#94A3B8">Policy Max Ceiling:</text>
+        <text x="152" y="44" fill="#38BDF8" font-weight="bold" font-family="'Courier New', monospace" text-anchor="end">AED 10,000</text>
+
+        <line x1="0" y1="56" x2="152" y2="56" stroke="#1E293B" stroke-width="1" />
+
+        <text x="0" y="74" fill="#EF4444" font-weight="bold">Excess Amount:</text>
+        <text x="152" y="74" fill="#EF4444" font-weight="bold" font-family="'Courier New', monospace" text-anchor="end">+AED 8,500</text>
+
+        <text x="0" y="94" fill="#EF4444" font-weight="bold">Breach Percentage:</text>
+        <text x="152" y="94" fill="#EF4444" font-weight="bold" font-family="'Courier New', monospace" text-anchor="end">+85.0%</text>
+      </g>
+    </g>
+
+    <!-- Severity Classification -->
+    <rect x="14" y="268" width="172" height="52" rx="4" fill="#2E0A12" stroke="#EF4444" stroke-width="1" class="blink-pill" />
+    <text x="86" y="288" fill="#FCA5A5" font-family="'Inter', sans-serif" font-weight="900" font-size="12" text-anchor="middle">
+      SEVERITY: CRITICAL
+    </text>
+    <text x="86" y="304" fill="#FDA4AF" font-family="'Inter', sans-serif" font-size="8.5" text-anchor="middle">
+      Excess &gt;= 50% Threshold Exceeded
+    </text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 470,200 L 518,200" fill="none" stroke="#E8C373" stroke-width="2" class="anim-dash" />
+
+  <!-- ============================================================== -->
+  <!-- STEP 3: BILINGUAL EXPLANATION GENERATION (X=520 to 740) -->
+  <!-- ============================================================== -->
+  <g transform="translate(520, 68)">
+    <rect x="0" y="0" width="220" height="340" rx="8" fill="url(#card-inner)" stroke="#C5A059" stroke-width="1.2" />
+    
+    <rect x="0" y="0" width="220" height="34" rx="8" fill="#241B10" stroke="#C5A059" stroke-width="1" />
+    <text x="14" y="22" fill="#E8C373" font-family="'Inter', sans-serif" font-weight="700" font-size="11">
+      3. BILINGUAL EXPLAINABILITY
+    </text>
+
+    <!-- English Generated Box -->
+    <g transform="translate(14, 46)">
+      <rect x="0" y="0" width="192" height="126" rx="6" fill="#0A0F1A" stroke="#1E2E48" stroke-width="1" />
+      <rect x="8" y="8" width="80" height="16" rx="3" fill="#1E293B" />
+      <text x="48" y="19" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800" text-anchor="middle">ENGLISH NLG</text>
+
+      <text x="10" y="42" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="9" leading="14">
+        "Financial transaction of AED
+      </text>
+      <text x="10" y="56" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="9">
+        18,500.00 was authorized by Grade 08
+      </text>
+      <text x="10" y="70" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="9">
+        Manager, which exceeds the grade
+      </text>
+      <text x="10" y="84" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="9">
+        authority ceiling of AED 10,000.00 by
+      </text>
+      <text x="10" y="98" fill="#F87171" font-family="'Inter', sans-serif" font-weight="700" font-size="9">
+        AED 8,500.00."
+      </text>
+      <text x="10" y="116" fill="#64748B" font-family="'Inter', sans-serif" font-size="7.5">
+        Generated with zero ambiguity • Fact-Verified
+      </text>
+    </g>
+
+    <!-- Arabic Generated Box -->
+    <g transform="translate(14, 184)">
+      <rect x="0" y="0" width="192" height="136" rx="6" fill="#0A0F1A" stroke="#C5A059" stroke-width="1" />
+      <rect x="104" y="8" width="80" height="16" rx="3" fill="#241B10" />
+      <text x="144" y="20" fill="#E8C373" font-family="'Cairo', sans-serif" font-size="9" font-weight="800" text-anchor="middle">التفسير بالعربية</text>
+
+      <text x="182" y="44" fill="#F8FAFC" font-family="'Cairo', sans-serif" font-size="9.5" text-anchor="end">
+        "معاملة مالية بقيمة 18,500 درهم
+      </text>
+      <text x="182" y="60" fill="#F8FAFC" font-family="'Cairo', sans-serif" font-size="9.5" text-anchor="end">
+        تم اعتمادها من قبل مفوض بالدرجة 08،
+      </text>
+      <text x="182" y="76" fill="#F8FAFC" font-family="'Cairo', sans-serif" font-size="9.5" text-anchor="end">
+        متجاوزة سقف الصلاحية المالية للدرجة
+      </text>
+      <text x="182" y="92" fill="#F8FAFC" font-family="'Cairo', sans-serif" font-size="9.5" text-anchor="end">
+        (10,000 درهم) بمقدار 8,500 درهم."
+      </text>
+      <text x="182" y="112" fill="#E8C373" font-family="'Cairo', sans-serif" font-size="8.5" font-weight="700" text-anchor="end">
+        صياغة قانونية متوافقة مع أنظمة المجموعة
+      </text>
+    </g>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 740,200 L 788,200" fill="none" stroke="#10B981" stroke-width="2" class="anim-dash" />
+
+  <!-- ============================================================== -->
+  <!-- STEP 4: ROUTING & ACTION REMEDIATION (X=790 to 950) -->
+  <!-- ============================================================== -->
+  <g transform="translate(790, 68)">
+    <rect x="0" y="0" width="160" height="340" rx="8" fill="url(#card-inner)" stroke="#10B981" stroke-width="1.2" />
+    
+    <rect x="0" y="0" width="160" height="34" rx="8" fill="#0E2319" stroke="#10B981" stroke-width="1" />
+    <text x="12" y="22" fill="#6EE7B7" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5">
+      4. ROUTE &amp; REMEDIATE
+    </text>
+
+    <!-- Assigned Owner -->
+    <g transform="translate(12, 46)">
+      <rect x="0" y="0" width="136" height="58" rx="5" fill="#0A1812" stroke="#10B981" stroke-width="0.8" />
+      <text x="10" y="16" fill="#6EE7B7" font-family="'Inter', sans-serif" font-weight="700" font-size="8.5">ASSIGNED OWNER:</text>
+      <text x="10" y="32" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="9.5">HR Operations</text>
+      <text x="10" y="46" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="8.5">Comp &amp; Benefits Lead</text>
+    </g>
+
+    <!-- Corrective Action Box -->
+    <g transform="translate(12, 114)">
+      <rect x="0" y="0" width="136" height="124" rx="5" fill="#09101C" stroke="#253550" stroke-width="1" />
+      <text x="10" y="16" fill="#F59E0B" font-family="'Inter', sans-serif" font-weight="800" font-size="8.5">ACTIONABLE REMEDY:</text>
+      <text x="10" y="32" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="8.5" leading="11">
+        • Route transaction to
+      </text>
+      <text x="10" y="44" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="8.5">
+        Grade 10+ VP for
+      </text>
+      <text x="10" y="56" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="8.5">
+        counter-approval, OR
+      </text>
+      <text x="10" y="72" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="8.5">
+        • Recalculate and cap
+      </text>
+      <text x="10" y="84" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="8.5">
+        disbursement to
+      </text>
+      <text x="10" y="96" fill="#E2E8F0" font-family="'Inter', sans-serif" font-size="8.5">
+        Grade 08 ceiling.
+      </text>
+    </g>
+
+    <!-- Audit Status Final Tag -->
+    <g transform="translate(12, 248)">
+      <rect x="0" y="0" width="136" height="72" rx="5" fill="#0B132B" stroke="#3B82F6" stroke-width="1" />
+      <text x="68" y="20" fill="#93C5FD" font-family="'Inter', sans-serif" font-weight="800" font-size="9" text-anchor="middle">
+        OUTPUT FORMAT
+      </text>
+      <text x="68" y="38" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="9" text-anchor="middle">
+        finding_format.csv
+      </text>
+      <rect x="18" y="46" width="100" height="16" rx="3" fill="#1D4ED8" />
+      <text x="68" y="57" fill="#EFF6FF" font-family="'Inter', sans-serif" font-size="8" font-weight="800" text-anchor="middle">
+        13 FIELDS MAPPED
+      </text>
+    </g>
+  </g>
+
+</svg>
