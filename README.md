@@ -9,11 +9,18 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/Ranjeet7680/HR-Compliance-Challenge/wiki">
+    <img src="https://img.shields.io/badge/GitHub%20Wiki-37%2B%20Diagrams%20%26%20Charts-00F0FF?style=for-the-badge&logo=gitbook&logoColor=white" />
+  </a>
   <img src="https://img.shields.io/badge/Emirates%20Group-Official%20HR%20Governance-D71921?style=for-the-badge&logo=emirates&logoColor=white" />
   <img src="https://img.shields.io/badge/Audit%20Coverage-100%25%20(Zero%20Sampling)-10B981?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Explainability-English%20%26%20Arabic%20(العربية)-C5A059?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Governance-Human%20in%20the%20Loop-4F46E5?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Data%20Privacy-UAE%20PDPL%20%26%20GDPR-0284C7?style=for-the-badge" />
+</p>
+
+<p align="center">
+  📖 <strong>Explore the Full Technical Architecture Wiki (37+ Diagrams &amp; Graphs):</strong> <a href="https://github.com/Ranjeet7680/HR-Compliance-Challenge/wiki">https://github.com/Ranjeet7680/HR-Compliance-Challenge/wiki</a>
 </p>
 
 ---
