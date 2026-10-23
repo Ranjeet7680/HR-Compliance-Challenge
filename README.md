@@ -162,7 +162,9 @@ python engine/anomaly_detector.py
 | **Working Prototype** | [`backend/app.py`](backend/app.py) | Full-stack application serving API & bilingual React UI at `http://localhost:8000`. |
 | **Primary Flagged Exceptions** | [`audit_findings_output.csv`](audit_findings_output.csv) | 2,761 flagged exceptions across 10,000 transactions matching [`finding_format.csv`](data/finding_format.csv). |
 | **Test Set Flagged Exceptions** | [`test_audit_findings_output.csv`](test_audit_findings_output.csv) | 618 flagged exceptions on the separate unlabelled test dataset. |
-| **2-Page Solution Note** | [`docs/SOLUTION_NOTE.md`](docs/SOLUTION_NOTE.md) | Executive note, dual-engine architecture, Responsible AI statement, and 90-day pilot plan. |
+| **2-Page Solution Note (PDF)** | [**docs/pdf/Emirates_Continuous_HR_Compliance_Solution_Note.pdf**](docs/pdf/Emirates_Continuous_HR_Compliance_Solution_Note.pdf) | Official 2-page submission PDF: executive summary, architecture, Responsible AI statement, 90-day roadmap. |
+| **Comprehensive Project Document (PDF)** | [**docs/pdf/Emirates_HR_Compliance_Comprehensive_Project_Document.pdf**](docs/pdf/Emirates_HR_Compliance_Comprehensive_Project_Document.pdf) | 6-page master architectural whitepaper with vector diagrams, 18-rule catalog, and data sovereignty blueprints. |
+| **Solution Note (Markdown)** | [docs/SOLUTION_NOTE.md](docs/SOLUTION_NOTE.md) | Markdown source of the 2-page executive and technical solution note. |
 | **3-Minute Demo Video Script** | [`docs/DEMO_VIDEO_SCRIPT.md`](docs/DEMO_VIDEO_SCRIPT.md) | Timestamped storyboard, visual cues, and voiceover script (0:00–3:00). |
 | **Deployment Blueprint** | [`docs/EMIRATES_DEPLOYMENT_GUIDE.md`](docs/EMIRATES_DEPLOYMENT_GUIDE.md) | Azure UAE North, Oracle HCM SFTP/Webhook integration, and data sovereignty architecture. |
 
